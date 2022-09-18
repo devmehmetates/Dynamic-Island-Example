@@ -57,6 +57,7 @@
 		C042D2F228D7162E00644A0D /* DynamicIslandExampleWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DynamicIslandExampleWidget.intentdefinition; sourceTree = "<group>"; };
 		C042D2F328D7163000644A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C042D2F528D7163000644A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C042D2FF28D7167E00644A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		C042D2D628D715F200644A0D /* Dynamic-Island-Example */ = {
 			isa = PBXGroup;
 			children = (
+				C042D2FF28D7167E00644A0D /* Info.plist */,
 				C042D2D728D715F200644A0D /* Dynamic_Island_ExampleApp.swift */,
 				C042D2D928D715F200644A0D /* ContentView.swift */,
 				C042D2DB28D715F300644A0D /* Assets.xcassets */,
@@ -390,6 +392,7 @@
 				DEVELOPMENT_TEAM = 6PALB6K8YY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Dynamic-Island-Example/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -420,6 +423,7 @@
 				DEVELOPMENT_TEAM = 6PALB6K8YY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Dynamic-Island-Example/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
