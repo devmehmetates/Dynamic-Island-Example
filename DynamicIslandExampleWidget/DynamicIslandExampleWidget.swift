@@ -7,63 +7,39 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
-
-struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
-    }
-
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
-        completion(entry)
-    }
-
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let configuration: ConfigurationIntent
-}
-
-struct DynamicIslandExampleWidgetEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        Text(entry.date, style: .time)
-    }
-}
 
 @main
-struct DynamicIslandExampleWidget: Widget {
-    let kind: String = "DynamicIslandExampleWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            DynamicIslandExampleWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+struct Widgets: WidgetBundle {
+    var body: some Widget {
+        NavigationWidget()
     }
 }
 
-struct DynamicIslandExampleWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        DynamicIslandExampleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+struct NavigationWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: NavigationAttributes.self) { context in
+            Text("Deneme")
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.center) {
+                    Text("ETA: " + context.state.eta.formatted())
+                }
+                DynamicIslandExpandedRegion(.bottom) {
+                    Text("Heavy Traffic ahead!")
+                }
+                DynamicIslandExpandedRegion(.leading) {
+                    Text(context.attributes.destination).font(.caption2)
+                }
+                DynamicIslandExpandedRegion(.trailing) {
+                    Text(context.state.nextTurn.toString)
+                }
+            } compactLeading: {
+                Text(context.state.time, format: .number)
+            } compactTrailing: {
+                Text(context.state.nextTurn.toString)
+            } minimal: {
+                Text(context.state.nextTurn.toString)
+            }
+        }
     }
 }

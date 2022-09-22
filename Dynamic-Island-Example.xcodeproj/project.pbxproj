@@ -18,6 +18,8 @@
 		C042D2F628D7163000644A0D /* DynamicIslandExampleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C042D2F228D7162E00644A0D /* DynamicIslandExampleWidget.intentdefinition */; };
 		C042D2F728D7163000644A0D /* DynamicIslandExampleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C042D2F228D7162E00644A0D /* DynamicIslandExampleWidget.intentdefinition */; };
 		C042D2FA28D7163000644A0D /* DynamicIslandExampleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C042D2E928D7162E00644A0D /* DynamicIslandExampleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C042D30128D716BB00644A0D /* DynamicIslandAttiributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042D30028D716BB00644A0D /* DynamicIslandAttiributes.swift */; };
+		C042D30228D717B600644A0D /* DynamicIslandAttiributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042D30028D716BB00644A0D /* DynamicIslandAttiributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		C042D2F328D7163000644A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C042D2F528D7163000644A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C042D2FF28D7167E00644A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C042D30028D716BB00644A0D /* DynamicIslandAttiributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicIslandAttiributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 				C042D2FF28D7167E00644A0D /* Info.plist */,
 				C042D2D728D715F200644A0D /* Dynamic_Island_ExampleApp.swift */,
 				C042D2D928D715F200644A0D /* ContentView.swift */,
+				C042D30028D716BB00644A0D /* DynamicIslandAttiributes.swift */,
 				C042D2DB28D715F300644A0D /* Assets.xcassets */,
 				C042D2DD28D715F300644A0D /* Preview Content */,
 			);
@@ -241,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C042D2DA28D715F200644A0D /* ContentView.swift in Sources */,
+				C042D30128D716BB00644A0D /* DynamicIslandAttiributes.swift in Sources */,
 				C042D2F728D7163000644A0D /* DynamicIslandExampleWidget.intentdefinition in Sources */,
 				C042D2D828D715F200644A0D /* Dynamic_Island_ExampleApp.swift in Sources */,
 			);
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C042D2F628D7163000644A0D /* DynamicIslandExampleWidget.intentdefinition in Sources */,
+				C042D30228D717B600644A0D /* DynamicIslandAttiributes.swift in Sources */,
 				C042D2F128D7162E00644A0D /* DynamicIslandExampleWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
