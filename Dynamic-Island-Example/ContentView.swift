@@ -56,7 +56,7 @@ struct ContentView: View {
     }
     
     func updateNavigation() async {
-        await activity?.update(using: NavigationAttributes.NavigationStatus(nextTurn: .right, eta: Date(), time: time))
+        await activity?.update(using: NavigationAttributes.NavigationStatus(nextTurn: .straight, eta: Date(), time: time))
     }
     
     func stopNavigation() async {
