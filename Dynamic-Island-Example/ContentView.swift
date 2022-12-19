@@ -9,19 +9,12 @@ import SwiftUI
 import ActivityKit
 
 struct ContentView: View {
-    @State var time: Int = 300
     @State var activity: Activity<NavigationAttributes>?
     
     var body: some View {
         VStack {
             Button("Start activity") {
                 startNavigation()
-                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                    time -= 1
-                    Task {
-                        await updateNavigation()
-                    }
-                }
             }
             
             Button("Update activity") {
@@ -46,7 +39,7 @@ struct ContentView: View {
     
     func startNavigation() {
         let attr = NavigationAttributes(destination: "New York")
-        let initialState = NavigationAttributes.NavigationStatus(nextTurn: .left, eta: Date(), time: time)
+        let initialState = NavigationAttributes.NavigationStatus(nextTurn: .left, eta: Date(), time: 20)
         do {
             let activity = try Activity<NavigationAttributes>.request(attributes: attr, contentState: initialState)
             self.activity = activity
@@ -56,7 +49,7 @@ struct ContentView: View {
     }
     
     func updateNavigation() async {
-        await activity?.update(using: NavigationAttributes.NavigationStatus(nextTurn: .straight, eta: Date(), time: time))
+        await activity?.update(using: NavigationAttributes.NavigationStatus(nextTurn: .straight, eta: Date(), time: 20))
     }
     
     func stopNavigation() async {
